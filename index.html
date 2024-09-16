@@ -68,9 +68,10 @@
             color: #fff;
             transform: translateY(100%);
             transition: transform 0.3s ease-in-out;
-            padding: 10px;
+            padding: 20px;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
             z-index: 15;
+            text-align: center; /* Center the text in the menu */
         }
 
         #menu.visible {
@@ -80,10 +81,12 @@
         #menu a {
             color: #fff;
             text-decoration: none;
-            display: block;
-            padding: 10px;
-            border-bottom: 1px solid #444;
-        }
+            display: inline-block; /* To allow padding to act horizontally */
+            padding: 10px 20px; /* Padding with more space on left and right */
+            border-left: 2px solid #fff; /* Border on the left */
+            border-right: 2px solid #fff; /* Border on the right */
+            margin: 10px 0; /* Margin between links */
+            font-size: 18px; /* Slightly larger font for better visibility */
 
         #menu a:hover {
             background: #555;
