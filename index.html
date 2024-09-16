@@ -118,6 +118,7 @@ pannellum.viewer('panorama', {
 
 // JavaScript to toggle the overlay image
 document.getElementById('toggle-overlay').addEventListener('click', function() {
+    console.log('Button clicked'); // Debugging line
     var overlay = document.getElementById('overlay-image');
     if (overlay.style.display === 'none' || overlay.style.display === '') {
         overlay.style.display = 'block';
