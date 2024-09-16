@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Tour</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+    <title>360° Tour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
     <style>
         body { margin: 0; }
         #panorama-viewer { width: 100%; height: 100vh; }
@@ -14,11 +14,78 @@
     <div id="panorama-viewer"></div>
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <script>
-        pannellum.viewer('panorama-viewer', {
+        // Initialize Pannellum Viewer
+        var viewer = pannellum.viewer('panorama-viewer', {
             type: 'equirectangular',
-            panorama: 'https://github.com/JosFlint/RE-VIEWING_THE_GAZE/blob/main/20240916_095052_601.jpg', // Replace with your image path
-            autoLoad: true
+            panorama: '20240916_095024_386 - 20240916_095024_386.jpg', // Initial panorama
+            autoLoad: true,
+            hotspots: [
+                {
+                    pitch: 10,
+                    yaw: 30,
+                    type: 'info',
+                    text: 'Go to Panorama 2',
+                    clickHandlerFunc: function() {
+                        viewer.setPanorama('20240916_095036_842.jpg');
+                    }
+                }
+            ]
         });
+
+        // Define hotspots for each panorama
+        function setPanorama(imagePath, hotspots) {
+            viewer.setPanorama(imagePath);
+            viewer.setHotspots(hotspots);
+        }
+
+        // Update hotspots for each panorama
+        var hotspotsForFirst = [
+            {
+                pitch: 10,
+                yaw: 30,
+                type: 'info',
+                text: 'Go to Panorama 2',
+                clickHandlerFunc: function() {
+                    setPanorama('20240916_095036_842.jpg', hotspotsForSecond);
+                }
+            }
+        ];
+
+        var hotspotsForSecond = [
+            {
+                pitch: 10,
+                yaw: 30,
+                type: 'info',
+                text: 'Go to Panorama 1',
+                clickHandlerFunc: function() {
+                    setPanorama('20240916_095024_386 - 20240916_095024_386.jpg', hotspotsForFirst);
+                }
+            },
+            {
+                pitch: -10,
+                yaw: -30,
+                type: 'info',
+                text: 'Go to Panorama 3',
+                clickHandlerFunc: function() {
+                    setPanorama('20240916_095052_601.jpg', hotspotsForThird);
+                }
+            }
+        ];
+
+        var hotspotsForThird = [
+            {
+                pitch: 10,
+                yaw: 30,
+                type: 'info',
+                text: 'Back to Panorama 2',
+                clickHandlerFunc: function() {
+                    setPanorama('20240916_095036_842.jpg', hotspotsForSecond);
+                }
+            }
+        ];
+
+        // Set initial hotspots
+        viewer.setHotspots(hotspotsForFirst);
     </script>
 </body>
 </html>
