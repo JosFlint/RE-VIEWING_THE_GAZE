@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var viewer = pannellum.viewer('panorama-viewer', {
         type: 'equirectangular',
-        panorama: https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jp',
+        panorama: https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jpg',
         autoLoad: true,
         hotspots: [
             {
@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         scenes: {
             scene2: {
-                panorama: 'https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jp',
+                panorama: 'https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jpg',
                 name: 'Scene 2'
             },
             scene3: {
-                panorama: 'https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jp',
+                panorama: 'https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jpg',
                 name: 'Scene 3'
             }
         }
