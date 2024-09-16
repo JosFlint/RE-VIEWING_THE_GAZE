@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var viewer = pannellum.viewer('panorama-viewer', {
         type: 'equirectangular',
-        panorama: 'https://raw.githubusercontent.com/JosFlint/RE-VIEWING_THE_GAZE/main/20240916_095024_386%20-%2020240916_095024_386.jpg',
+        panorama: https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jp',
         autoLoad: true,
         hotspots: [
             {
@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         scenes: {
             scene2: {
-                panorama: 'https://raw.githubusercontent.com/JosFlint/RE-VIEWING_THE_GAZE/main/20240916_095036_842.jpg',
+                panorama: 'https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jp',
                 name: 'Scene 2'
             },
             scene3: {
-                panorama: 'https://raw.githubusercontent.com/JosFlint/RE-VIEWING_THE_GAZE/main/20240916_095052_601.jpg',
+                panorama: 'https://josflint.github.io/MAexhibitiongallery/20240916_095024_386 - 20240916_095024_386.jp',
                 name: 'Scene 3'
             }
         }
