@@ -30,6 +30,7 @@
         background-size: cover;
         background-position: center;
         mix-blend-mode: multiply; /* Apply multiply blend mode */
+        z-index: 10; /* Ensure it is on top of the panorama */
     }
     #toggle-overlay {
         position: absolute;
@@ -41,7 +42,7 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        z-index: 10; /* Make sure it’s above other elements */
+        z-index: 20; /* Make sure it’s above other elements */
     }
     </style>
 </head>
