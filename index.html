@@ -16,12 +16,41 @@
     #panorama {
         width: 100%;
         height: 100vh; /* Full viewport height */
+        position: relative; /* Make sure the overlay image is positioned relative to this */
+    }
+    #overlay-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        display: none; /* Hidden by default */
+        background-image: url('Overlay.png'); /* Replace with your overlay image URL */
+        background-size: cover;
+        background-position: center;
+        mix-blend-mode: multiply; /* Apply multiply blend mode */
+    }
+    #toggle-overlay {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 10px;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 10; /* Make sure it’s above other elements */
     }
     </style>
 </head>
 <body>
 
-<div id="panorama"></div>
+<div id="panorama">
+    <div id="overlay-image"></div>
+    <button id="toggle-overlay">Toggle Overlay</button>
+</div>
 <script>
 pannellum.viewer('panorama', {   
     "default": {
@@ -84,6 +113,16 @@ pannellum.viewer('panorama', {
                 }
             ]
         }
+    }
+});
+
+// JavaScript to toggle the overlay image
+document.getElementById('toggle-overlay').addEventListener('click', function() {
+    var overlay = document.getElementById('overlay-image');
+    if (overlay.style.display === 'none' || overlay.style.display === '') {
+        overlay.style.display = 'block';
+    } else {
+        overlay.style.display = 'none';
     }
 });
 </script>
