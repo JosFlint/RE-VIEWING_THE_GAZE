@@ -26,7 +26,7 @@
         height: 100%;
         background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
         display: none; /* Hidden by default */
-        background-image: url('overlay.png'); /* Replace with your overlay image URL */
+        background-image: url('https://josflint.github.io/RE-VIEWING_THE_GAZE/overlay.png'); /* Replace with your overlay image URL */
         background-size: cover;
         background-position: center;
         mix-blend-mode: multiply; /* Apply multiply blend mode */
@@ -63,7 +63,7 @@
         #menu {
             position: fixed;
             bottom: 0;
-            left: left: 50%; /* Start from the center of the screen */
+            left: 50%; /* Start from the center of the screen */
             width: 90%;
             background: rgba(128, 128, 128, 0.7); /* Grey background with 70% opacity */
             color: #fff;
@@ -119,69 +119,139 @@
     <button id="menu-button">Menu</button>
 <div id="menu">
     <button id="close-menu">X</button> <!-- X button to close the menu -->
-    <a href="https://example1.com" target="_blank">Artist Website</a>
-    <a href="https://example2.com" target="_blank">MA Website</a>
-    <a href="https://example3.com" target="_blank">Camera Filter</a>
+    <a href="https://josflint.com" target="_blank">Artist Website</a>
+    <a href="https://sdcapgshow2024.lboro.ac.uk/?post_type=student&p=336" target="_blank">MA Website</a>
+    <a href="https://josflint.github.io/gittest/" target="_blank">Camera Filter</a>
 </div>
 <script>
 pannellum.viewer('panorama', {   
     "default": {
-        "firstScene": "e n 1",
+        "firstScene": "overall",
         "author": "Jo Flint",
         "sceneFadeDuration": 1000
     },
 
     "scenes": {
-        "e n 1": {
-            "title": "e n 1",
+        "overall": {
+            "title": "Overall View",
             "hfov": 110,
-            "pitch": -3,
-            "yaw": 117,
+            "pitch": 0,
+            "yaw": 0,
             "type": "equirectangular",
-            "panorama": "20240916_095024_386 - 20240916_095024_386.jpg",
+            "panorama": "https://josflint.github.io/RE-VIEWING_THE_GAZE/overall.jpg",
             "hotSpots": [
                 {
-                    "pitch": -2.1,
-                    "yaw": 132.9,
+                    "pitch": -23.1,
+                    "yaw": 62,
                     "type": "scene",
-                    "text": "exhibit new 2",
-                    "sceneId": "e n 2"
+                    "text": "Single View",
+                    "sceneId": "single"
+                },
+                {
+                    "pitch": -9.1,
+                    "yaw": -5.8,
+                    "type": "scene",
+                    "text": "Diptych View",
+                    "sceneId": "diptych"
+                },
+                {
+                    "pitch": -9.1,
+                    "yaw": -44.9,
+                    "type": "scene",
+                    "text": "Triptych View",
+                    "sceneId": "triptych"
                 }
             ]
         },
 
-        "e n 2": {
-            "title": "e n 2",
+        "single": {
+            "title": "Single View",
             "hfov": 110,
-            "pitch": -3,
-            "yaw": 117,
+            "pitch": 0,
+            "yaw": 0,
             "type": "equirectangular",
-            "panorama": "20240916_095036_842.jpg",
+            "panorama": "https://josflint.github.io/RE-VIEWING_THE_GAZE/single.jpg",
             "hotSpots": [
                 {
-                    "pitch": -2.1,
-                    "yaw": 132.9,
+                    "pitch": -10.1,
+                    "yaw": 180.65,
                     "type": "scene",
-                    "text": "exhibit new 3",
-                    "sceneId": "e n 3"
+                    "text": "Triptych View",
+                    "sceneId": "triptych"
+                },
+                {
+                    "pitch": -15.1,
+                    "yaw": 77.4,
+                    "type": "scene",
+                    "text": "Overall View",
+                    "sceneId": "overall"
+                },
+                {
+                    "pitch": -12.1,
+                    "yaw": 231,
+                    "type": "scene",
+                    "text": "Diptych View",
+                    "sceneId": "diptych"
                 }
             ]
         },
-        "e n 3": {
-            "title": "Spring House or Dairy",
+        "diptych": {
+            "title": "Diptych View",
             "hfov": 110,
-            "yaw": 5,
+            "yaw": 0,
             "type": "equirectangular",
-            "panorama": "20240916_095052_601.jpg",
+            "panorama": "https://josflint.github.io/RE-VIEWING_THE_GAZE/diptych.jpg",
             "hotSpots": [
                 {
-                    "pitch": -0.6,
-                    "yaw": 37.1,
+                    "pitch": -19.1,
+                    "yaw": 235.9,
                     "type": "scene",
-                    "text": "e n 1",
-                    "sceneId": "circle",
-                    "targetYaw": -23,
-                    "targetPitch": 2
+                    "text": "Triptych View",
+                    "sceneId": "triptych"
+                },
+                {
+                    "pitch": -11.8,
+                    "yaw": 106.2,
+                    "type": "scene",
+                    "text": "Single View",
+                    "sceneId": "single"
+                },
+                {
+                    "pitch": -10.6,
+                    "yaw": 140.4,
+                    "type": "scene",
+                    "text": "Overall View",
+                    "sceneId": "overall"
+                }
+            ]
+        },
+        "triptych": {
+            "title": "Triptych View",
+            "hfov": 110,
+            "yaw": 2,
+            "type": "equirectangular",
+            "panorama": "https://josflint.github.io/RE-VIEWING_THE_GAZE/triptych.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -16.1,
+                    "yaw": 97.9,
+                    "type": "scene",
+                    "text": "Diptych View",
+                    "sceneId": "diptych"
+                },
+                {
+                    "pitch": -11.6,
+                    "yaw": 180.4,
+                    "type": "scene",
+                    "text": "Single View",
+                    "sceneId": "single"
+                },
+                {
+                    "pitch": -11.6,
+                    "yaw": 216.4,
+                    "type": "scene",
+                    "text": "Overall View",
+                    "sceneId": "overall"
                 }
             ]
         }
