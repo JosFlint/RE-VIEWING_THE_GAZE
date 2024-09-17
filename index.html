@@ -51,12 +51,13 @@
             bottom: 10px;
             right: 50%;
             transform: translateX(-50%);
-            background: #007bff;
+            background: rgba(128, 128, 128, 0.7); /* Grey background with 70% opacity */
             color: #fff;
             border: none;
             padding: 10px;
             cursor: pointer;
             z-index: 10;
+            border-radius: 0px; /* Optional: Rounded corners */
         }
 
         #menu {
@@ -64,19 +65,21 @@
             bottom: 0;
             left: 0;
             width: 90%;
-            background: #333;
+            background: rgba(128, 128, 128, 0.7); /* Grey background with 70% opacity */
             color: #fff;
+            max-width: 600px; /* Limit the maximum width */
             transform: translateY(100%);
             transition: transform 0.3s ease-in-out;
-            padding: 10px; /* reverted padding */
+            padding: 40px 10px 10px 10px; /* Add padding to the top */
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
             z-index: 15;
             margin: 0 auto; /* Center the menu */
             text-align: center;
+            border-radius: 10px 10px 0 0; /* Rounded corners at the top */
         }
 
         #menu.visible {
-            transform: translateY(0);
+            transform: translateX(-50%) translateY(0);
         }
 
         #menu a {
@@ -86,6 +89,7 @@
             padding: 10px;
             border: 1px solid #fff; /* Border around each link */
             margin: 10px 0; /* Space between each link */
+            text-align: center;
         }
 
         #menu a:hover {
@@ -95,12 +99,14 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        background: #ff0000;
+        background: rgba(128, 128, 128, 0.7);
         color: #fff;
         border: none;
         padding: 5px 10px;
         cursor: pointer;
         font-size: 18px;
+        z-index: 16;
+        border-radius: 3px;
         }
     </style>
 </head>
