@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tour</title>
+    <title>RE-VIEWING THE GAZE Tour</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
@@ -68,9 +68,10 @@
             color: #fff;
             transform: translateY(100%);
             transition: transform 0.3s ease-in-out;
-            padding: 10px;
+            padding: 10px 20px; /* Add padding of 20px to the left and right */
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
             z-index: 15;
+            text-align: center;
         }
 
         #menu.visible {
@@ -82,11 +83,23 @@
             text-decoration: none;
             display: block;
             padding: 10px;
-            border-bottom: 1px solid #444;
+            border: 1px solid #fff; /* Border around each link */
+            margin: 10px 0; /* Space between each link */
         }
 
         #menu a:hover {
             background: #555;
+        }
+        #close-menu {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #ff0000;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 18px;
         }
     </style>
 </head>
@@ -97,9 +110,10 @@
     <button id="toggle-overlay">Toggle Overlay</button>
     <button id="menu-button">Menu</button>
 <div id="menu">
-    <a href="https://example1.com" target="_blank">Link 1</a>
-    <a href="https://example2.com" target="_blank">Link 2</a>
-    <a href="https://example3.com" target="_blank">Link 3</a>
+    <button id="close-menu">X</button> <!-- X button to close the menu -->
+    <a href="https://example1.com" target="_blank">Artist Website</a>
+    <a href="https://example2.com" target="_blank">MA Website</a>
+    <a href="https://example3.com" target="_blank">Camera Filter</a>
 </div>
 <script>
 pannellum.viewer('panorama', {   
@@ -180,6 +194,10 @@ document.getElementById('toggle-overlay').addEventListener('click', function() {
 document.getElementById('menu-button').addEventListener('click', function() {
         var menu = document.getElementById('menu');
         menu.classList.toggle('visible');
+});
+document.getElementById('close-menu').addEventListener('click', function() {
+        var menu = document.getElementById('menu');
+        menu.classList.remove('visible');
 });
 </script>
 
